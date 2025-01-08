@@ -18,13 +18,14 @@ export default function NewsList(){
      const [open,setOpen] = useState(false)
 
      const [state, setstate] = useState({data:"link displayed"})
+     const [selectedId, setSelectedId] = useState(null);
 
     const changeState = (val) => {  
        
     
-        console.log("function triggered");
         setOpen(true)
         setLinkk(val)
+        setSelectedId(val.article_id);
 
         
         
@@ -37,12 +38,18 @@ export default function NewsList(){
 
 
     return(
-        <div className="flex">
-            <div className="mt-4 w-80 ">
+        <div className="flex flex-col md:flex-row h-full">
+            <div className={`p-4 mt-10 border-r border-gray-300  transition-all duration-300 ${
+          open ? "md:w-1/3" : "md:w-2/3 md:mx-auto"
+        } w-full`}>
             <div>{data1 && data1.map((val,index)=>(
                 <div  className="mt-4" key={val.article_id}>
-                <div onClick={()=>changeState(val)} className="flex border-2 border-gray-600 rounded-md p-2 hover:cursor-pointer"   >
-                <div><img className="object-fill h-48 w-96" src={val.image_url} alt="" /></div>
+                <div onClick={()=>changeState(val)} className={`flex border-2 border-gray-600 ${
+                  selectedId === val.article_id
+                    ? "bg-gray-200 border-gray-400 "
+                    : "border-gray-600"
+                }rounded-md p-2 hover:cursor-pointer`}  >
+                <div><img className="object-fill h-48 w-full sm:w-96 md:w-96" src={val.image_url} alt="" /></div>
                 <div className="ml-2">
                 <p className="font-medium">{val.title}</p>
                 <p className="text-xs mt-2">{val.pubDate}</p>
@@ -60,14 +67,15 @@ export default function NewsList(){
             
             
         </div>
-        <div>
-            
-        </div>
+        <div className={`flex-1 p-4 sm:px-8 md:px-16 ${!open && "hidden"}`}>
         {open && 
-            <NewsContent data = {link}/>
+            <NewsContent data = {link} />
         
         
              }
+            
+        </div>
+        
         
         </div>
         
@@ -75,20 +83,3 @@ export default function NewsList(){
 
 }
 
-//  <div>{data1 && data1.map((val,index)=>(
-//                     <div className="pt-4" key={val.article_id} >TITLE: {val.title}</div>
-//                 ))}</div> 
-
-                // ()=>handleChange('https://www.pcgamer.com/hardware/graphics-cards/it-looks-like-amds-expecting-the-rx-9070-xt-to-rival-the-rtx-4070-ti-which-is-fine-if-it-ends-up-being-the-right-price')
-
-            //     useEffect(()=>{
-
-            //         // async function getData(){
-            //         //     let datanew = await fetch('https://newsdata.io/api/1/news?apikey=pub_635031f8dfedfcd1866ea8b447113b762127f&language=en&category=technology')
-            //         //     console.log(datanew,"new");
-            
-            //         // }
-            //         // getData()
-                    
-            //     },[])
-            // console.log(open,"open");

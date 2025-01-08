@@ -9,7 +9,14 @@ let data = {
       "keywords": ["graphics cards", "hardware"],
       "creator": null,
       "video_url": null,
-      "description": "It's all about the money, money, money.",
+      "description":"It's all about money, money, money",
+      "descriptionDetail": `Previous rumours have suggested that AMD's new top-end RDNA 4 GPU will deliver RTX 4080-like raster performance. However, according to an official slide detailing the branding scheme for the new cards, it looks like the RTX 4070 Ti is the 40-series card it's aiming to match.
+
+The RX 9070 XT has been expected to be a mid-range card compared to next-generation offerings from Nvidia, as AMD's Jack Huynh previously said that the company has focused on the mid-range sector over the high-end for RDNA 4.So, big deal. Rumours are wrong all the time. And, it must be said that the RTX 4070 Ti is still a very fast card, so a new AMD model delivering similar performance would absolutely be worth looking at.
+
+For the right price, that is. According to the branding scheme, the RX 9070 series sits below the RX 7900 XTX by comparison. The older RDNA 3 card is no slouch, that's for sure, and can trade blows with the RTX 4080—but overall it slightly loses out.
+
+But compared to the RTX 4070 Ti? It's ahead. Not by a huge amount, but by enough. The RX 7900 XTX can still be found for around the $870 mark, and we're expecting the RX 9070 XT, as a mid-range card, to release for a fair bit cheaper than that.`,
       "content": "ONLY AVAILABLE IN PAID PLANS",
       "pubDate": "2025-01-06 19:47:00",
       "pubDateTZ": "UTC",
