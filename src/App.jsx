@@ -11,13 +11,15 @@ function App() {
 
   return(
    
-    <div className=''>
-      <Sidebar/>
-      <Topbar/>
-      <div className=" ml-44   ">
-        <NewsList/>
-     
+    <div >
 
+      <Sidebar/>
+      
+      <div className="overflow-x-auto transition-all duration-300 ml-0 md:ml-40   ">
+        <div className=''><Topbar/></div>
+        <div className=''><NewsList/></div>
+
+       
     </div>
     
     </div>
@@ -25,3 +27,11 @@ function App() {
 
 }
 export default App
+
+{/* <div>
+          <Topbar/>
+          </div>
+
+        <div className=''>
+          <NewsList/>
+          </div>  */}
